@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan DOM 6 | Pemindahan isi gelas berisi kopi dan teh</title>
+    <style>
+        #gelas-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 25px;
+        }
+
+        #gelas-container div {
+            width: 220px;
+            height: 400px;
+            border: 1px solid black;
+            border-radius: 0;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+        }
+
+        #gelas-container div div {
+            width: 220px;
+            height: 280px;
+            border: 1px solid black;
+            border-radius: 0;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+        }
+
+        .teh {
+            background: #4E2E1D;
+        }
+
+        .kopi {
+            background: #25150C;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gelas-container">
+        <div id="gelas-a">
+            <div class="teh"></div>
+        </div>
+        <div id="gelas-b">
+            <div class="kopi"></div>
+        </div>
+        <div id="gelas-transit">
+            <div class=""></div>
+        </div>
+    </div>
+
+    <script>
+        const gelasA = document.getElementById('gelas-a')
+        const gelasB = document.getElementById('gelas-b')
+        const gelasTransit = document.getElementById('gelas-transit')
+        const gelasAContent = document.querySelector('#gelas-a div')
+        const gelasBContent = document.querySelector('#gelas-b div')
+        const gelasTransitContent = document.querySelector('#gelas-transit div')
+
+        let temp = ''
+
+        gelasAContent.addEventListener('click',
+            () => {
+                if (temp === '') {
+                    temp = gelasAContent.getAttribute('class')
+                    gelasAContent.setAttribute('class', '')
+                } else if (temp !== '' && gelasAContent.getAttribute('class') === '') {
+                    gelasAContent.setAttribute('class', temp)
+                    temp = ''
+                }
+            }
+        )
+        gelasBContent.addEventListener('click',
+            () => {
+                if (temp === '') {
+                    temp = gelasBContent.getAttribute('class')
+                    gelasBContent.setAttribute('class', '')
+                } else if (temp !== '') {
+                    gelasBContent.setAttribute('class', temp)
+                    temp = ''
+                }
+            }
+        )
+        gelasTransitContent.addEventListener('click',
+            () => {
+                if (temp === '') {
+                    temp = gelasTransitContent.getAttribute('class')
+                    gelasTransitContent.setAttribute('class', '')
+                } else if (temp !== '') {
+                    gelasTransitContent.setAttribute('class', temp)
+                    temp = ''
+                }
+            }
+        )
+    </script>
+</body>
+
+</html>
