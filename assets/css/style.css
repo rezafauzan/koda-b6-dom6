@@ -1,0 +1,35 @@
+#gelas-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 25px;
+}
+
+#gelas-container div {
+    width: 220px;
+    height: 400px;
+    border: 1px solid black;
+    border-radius: 0;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+#gelas-container div div {
+    width: 220px;
+    height: 280px;
+    border: 1px solid black;
+    border-radius: 0;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.teh {
+    background: #4E2E1D;
+}
+
+.kopi {
+    background: #25150C;
+}
